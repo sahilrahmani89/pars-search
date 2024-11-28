@@ -42,7 +42,7 @@ const SearchComponent: React.FC = () => {
           </button>
         )}
       </div>
-      <div style={{ overflowY: 'auto', maxHeight: '400px', border: '1px solid #ccc', maxWidth: '350px' }}> 
+      <div style={{ overflowY: 'auto', maxHeight: '400px', border: '1px solid #ccc', maxWidth: '350px' }} id="scrollable-container"> 
         {query ?
         filteredItems.length > 0 ? (
           filteredItems.map((item, index) => (
@@ -56,6 +56,7 @@ const SearchComponent: React.FC = () => {
                 backgroundColor: highlightedIndex === index ? 'lightgray' : 'white',
                 cursor: 'pointer',
               }}
+              className="search-item"
             >
               <div><strong>ID:</strong> {TextHighLight(item.id,query)}</div>
               <div><strong>Name:</strong> {TextHighLight(item.name, query)}</div>
